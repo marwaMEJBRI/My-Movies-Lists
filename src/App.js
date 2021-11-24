@@ -31,6 +31,9 @@ function App() {
         ImageMovies : "https://fr.web.img4.acsta.net/pictures/21/10/26/16/44/0874332.jpg"
         }
   ]);
+
+
+  
         const [movie, setMovie] = useState({
           Title: "",
           ImageMovies: "",
@@ -44,13 +47,14 @@ function App() {
       };
 
       const handleSearch= (Title,rating) =>{
-        const mv = movies.filter((item) => (item.Title === Title) || (item.rating === rating)) 
+        const mv = movies.filter((item) => (item.Title.includes(Title) ) && (item.rating >= rating)) 
         setMovies(mv)
       }
 
       const handleChange = (e) =>{
         setMovie({...movie, [e.target.name]: e.target.value})
       }
+
       const handleSubmit = (e) =>{
         e.preventDefault()
         addMovie({...movie})
