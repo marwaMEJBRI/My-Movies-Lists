@@ -13,7 +13,7 @@ const NavBar = ({handleSearch})=> {
     const[rating,setRating] = useState(0);
 return(
     <div className="nav">
-    <h1> MoviesList</h1>
+    <h1>My Movies</h1>
     <div className="block">
     <input type="text" placeholder="Search By Title" name="Title" value={title} onChange={(e) => {
         setTitle(e.target.value)
